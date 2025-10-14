@@ -37,6 +37,7 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL")
 CUSTOM_TOKENS_LIFETIME_HOURS = float(os.getenv("CUSTOM_TOKENS_LIFETIME_HOURS"))
 FRONTEND_URL = os.getenv("FRONTEND_URL")
+DB_USE_SQLITE = os.getenv("DB_USE_SQLITE") == "True"
 
 print(f"DEBUG: {DEBUG}")
 print(f"AWS_STORAGE: {AWS_STORAGE}")
@@ -111,7 +112,7 @@ WSGI_APPLICATION = "project.wsgi.application"
 # Setup database for testing and production
 IS_TESTING = len(sys.argv) > 1 and sys.argv[1] == "test"
 
-if IS_TESTING:
+if IS_TESTING or DB_USE_SQLITE:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
