@@ -42,6 +42,8 @@ DB_USE_SQLITE = os.getenv("DB_USE_SQLITE") == "True"
 print(f"DEBUG: {DEBUG}")
 print(f"AWS_STORAGE: {AWS_STORAGE}")
 print(f"HOST: {HOST}")
+print(f"DB_USE_SQLITE: {DB_USE_SQLITE}")
+print("--------------------------------\n")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
