@@ -382,6 +382,9 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "EXCEPTION_HANDLER": "utils.handlers.custom_exception_handler",
+    "DEFAULT_RENDERER_CLASSES": (
+        "utils.renders.CustomJSONRenderer",
+    ),
 }
 
 # Setup simple jwt
